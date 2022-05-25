@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("./config/database").connect();
+const orbitDB = require("./config/orbitdb")
 const jsonwebtoken = require("jsonwebtoken")
 const bcrypt = require("bcryptjs")
 const express = require("express");
@@ -16,6 +17,7 @@ app.post("/register", async (req, res) => {
 
     // Our register logic starts here
     try {
+
         // Get user input
         const { first_name, last_name, email, password } = req.body;
 
@@ -100,8 +102,9 @@ app.post("/login", async (req, res) => {
 
 const auth = require("./middleware/auth");
 
-app.post("/welcome", auth, (req, res) => {
+app.post("/welcome", auth, async (req, res) => {
     res.status(200).send("Welcome 🙌 ");
+    const docstore = await orbitDB.createDocstore()
 });
 
 module.exports = app;
