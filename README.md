@@ -23,7 +23,7 @@ If the production and consumption of the ordered electricity has taken place, a 
   />
 </p>
 
-## Get Started
+## Install
 1. Git clone this repo 
 2. Run ```npm i``` in root directory
 3. Start a mongodb instance 
@@ -32,20 +32,24 @@ If the production and consumption of the ordered electricity has taken place, a 
 
 Create a user with a POST request: ```http://localhost:4002/register```
 with a JSON body for example:
+```json
  {
      "first_name": "MyName",
      "last_name": "MyLast",
      "email": "my@last.com",
      "password": "11223344"
  }
+ ```
 
  Login with a POST request: ```http://localhost:4002/login```
  with JSON body:
+ ```json
   {
      "email": "my@last.com",
      "password": "11223344"
  }
-
+ ```
+ 
  Then copy the token from the login response and 
  Enter with a GET request: ```http://localhost:4002/login```
  with the Header:
@@ -61,4 +65,4 @@ with a JSON body for example:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[MIT © 2021 Lena Stallinger.](./LICENSE.txt)
+[MIT © 2022 Lena Stallinger.](./LICENSE.txt)
