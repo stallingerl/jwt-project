@@ -59,6 +59,30 @@ with a JSON body for example:
  with the Header:
  x-access-token as key and the copied token as a value
 
+ Save an mfa to OrbitDB with a POST Request: ```http://localhost:4002/mfa```
+ with JSON body:
+ ```json
+{
+	"producer": {
+		"id": "08465",
+		"meter_id": "35"
+		},
+	"consumer": {
+		"id": "89732",
+		"meter_id": "65"
+		},
+	"energy": {
+		"date": "2022-05-11 12:00",
+		"energy_kwh": 11
+		},
+	"mfa_id": "1"
+}
+ ```
+ and with the Header:
+ x-access-token as key and the copied token as a value
+
+
+
  ## Contributing
 
 <a href="https://github.com/stallingerl/jwt-project/graphs/contributors">
